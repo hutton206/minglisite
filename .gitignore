@@ -1,0 +1,30 @@
+# WordPress 敏感設定
+wp-config.php
+
+# WordPress 核心（不需版控，部署時重新安裝）
+/wp-admin/
+/wp-includes/
+
+# 上傳的媒體檔案
+/wp-content/uploads/
+
+# 快取與暫存
+/wp-content/cache/
+/wp-content/upgrade/
+/wp-content/backup-db/
+*.log
+
+# 外掛（不自己維護的，部署時重新安裝）
+/wp-content/plugins/
+
+# 其他主題（只版控 astra-child）
+/wp-content/themes/astra/
+/wp-content/themes/twentytwentyfour/
+/wp-content/themes/twentytwentyfive/
+
+# 系統檔
+.DS_Store
+Thumbs.db
+
+# Laragon 本機設定
+.htaccess

@@ -1,0 +1,172 @@
+# Translation of Plugins - SQLite Database Integration - Stable (latest release) in Chinese (Taiwan)
+# This file is distributed under the same license as the Plugins - SQLite Database Integration - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2025-08-03 08:10:44+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: zh_TW\n"
+"Project-Id-Version: Plugins - SQLite Database Integration - Stable (latest release)\n"
+
+#: admin-page.php:133
+msgid "The Query Monitor plugin will continue to function correctly after the change. You can safely proceed with the installation."
+msgstr "進行變更後，Query Monitor 外掛仍會正確執行，因此網站管理員可以放心繼續安裝。"
+
+#: admin-page.php:132
+msgid "To enable SQLite support, this file will need to be replaced."
+msgstr "如需啟用 SQLite 支援，必須替換這個檔案。"
+
+#. translators: %s: db.php drop-in path
+#: admin-page.php:128
+msgid "We’ve detected an existing database drop-in file at %s, created by the Query Monitor plugin."
+msgstr "系統已偵測到由 Query Monitor 外掛建立、位於 %s 的資料庫強化外掛檔案。"
+
+#: wp-includes/sqlite/class-wp-sqlite-db.php:247
+#: wp-includes/sqlite/class-wp-sqlite-db.php:264
+msgid "WordPress database error:"
+msgstr "WordPress 資料庫錯誤:"
+
+#: wp-includes/sqlite/install-functions.php:221
+msgid "The password you chose during installation."
+msgstr "安裝時所設定的密碼。"
+
+#: wp-includes/sqlite/install-functions.php:204
+msgid "User already exists. Password inherited."
+msgstr "這個使用者已存在，將會沿用現有密碼。"
+
+#: wp-includes/sqlite/install-functions.php:200
+msgid "Your chosen password."
+msgstr "安裝過程中所設定的密碼。"
+
+#: wp-includes/sqlite/install-functions.php:193
+msgid "<strong><em>Note that password</em></strong> carefully! It is a <em>random</em> password that was generated just for you."
+msgstr "請小心<strong>記下密碼</strong>！這是個人專屬的<strong>隨機</strong>密碼。"
+
+#: health-check.php:44
+msgid "Database size"
+msgstr "資料庫大小"
+
+#: health-check.php:38
+msgid "Database file"
+msgstr "資料庫檔案"
+
+#: health-check.php:33
+msgid "SQLite version"
+msgstr "SQLite 版本"
+
+#: health-check.php:27
+msgid "Database type"
+msgstr "資料庫類型"
+
+#: health-check.php:22
+msgid "Undefined"
+msgstr "未定義"
+
+#: admin-page.php:163
+msgid "Database: MySQL"
+msgstr "資料庫: MySQL"
+
+#: admin-page.php:161
+msgid "Database: MariaDB"
+msgstr "資料庫: MariaDB"
+
+#: admin-page.php:159
+msgid "Database: SQLite"
+msgstr "資料庫: SQLite"
+
+#: admin-page.php:139
+msgid "Install SQLite database"
+msgstr "安裝 SQLite 資料庫"
+
+#: admin-page.php:137
+msgid "By clicking the button below, you will be redirected to the WordPress installation screen to setup your new database"
+msgstr "網站管理員點擊下方按鈕後，便會重新導向至 WordPress 安裝畫面以設定新資料庫。"
+
+#: admin-page.php:120
+msgid "This plugin will switch to a separate database and install WordPress in it. You will need to reconfigure your site, and start with a fresh site. Disabling the plugin you will get back to your previous MySQL database, with all your previous data intact."
+msgstr "啟用這個外掛會切換至獨立資料庫並將 WordPress 安裝於其中。網站管理員需要重新組態這個網站，並從全新網站開始。停用這個外掛之後，這個網站會切換回之前的 MySQL 資料庫，原有的資料均會保持不變。"
+
+#: admin-page.php:119
+msgid "Important note"
+msgstr "重要注意事項"
+
+#: admin-page.php:117
+msgid "All checks completed successfully, your site can use an SQLite database. You can proceed with the installation."
+msgstr "全部檢查項目均已成功完成，這個網站可以使用 SQLite 資料庫。網站管理員可以繼續安裝。"
+
+#. translators: %s: db.php drop-in path
+#: admin-page.php:109
+msgid "The SQLite plugin cannot be activated because the %s directory is not writable."
+msgstr "由於 %s 目錄無法寫入，因此 SQLite 外掛無法啟用。"
+
+#. translators: %s: db.php drop-in path
+#: admin-page.php:96
+msgid "The SQLite plugin cannot be activated because a different %s drop-in already exists."
+msgstr "由於不同的 %s 強化外掛已存在，因此無法啟用 SQLite 外掛。"
+
+#. translators: %s: db.php drop-in path
+#: admin-page.php:85
+msgid "Update %s file"
+msgstr "更新 %s 檔案"
+
+#. translators: %s: db.php drop-in path
+#: admin-page.php:75
+msgid "An older %s file was detected. Please click the button below to update the file."
+msgstr "已偵測到舊版 %s 檔案。請點擊下方按鈕以更新檔案。"
+
+#: admin-page.php:66
+msgid "We detected that the PDO SQLite driver is missing from your server (the pdo_sqlite extension is not loaded). Please make sure that SQLite is enabled in your PHP installation before proceeding."
+msgstr "系統偵測到這台伺服器缺少 PDO SQLite 驅動程式 (擴充功能 pdo_sqlite 未載入)。在執行這個外掛前，請確認這台伺服器的 PHP 執行環境已啟用 SQLite。"
+
+#. translators: 1: Admin URL to deactivate the module, 2: db.php drop-in path,
+#: admin-page.php:58
+msgid "The SQLite drop-in is enabled. To disable it and get back to your previous, MySQL database, you can <a href=\"%1$s\">deactivate the plugin</a>. Alternatively, you can manually delete the %2$s file from your server."
+msgstr "SQLite 強化外掛已啟用。要停用這個強化外掛並讓這個網站返回之前使用 MySQL 資料庫的狀態，網站管理員可以<a href=\"%1$s\">停用這個外掛</a>。除此之外，網站管理員也可以在網站伺服器上手動刪除 %2$s 檔案。"
+
+#: admin-page.php:52
+msgid "SQLite is enabled."
+msgstr "SQLite 已啟用。"
+
+#: admin-page.php:46
+msgid "SQLite integration."
+msgstr "SQLite 整合"
+
+#: admin-page.php:16 admin-page.php:17
+msgid "SQLite integration"
+msgstr "SQLite 整合"
+
+#. translators: 1: db.php drop-in path, 2: Admin URL to deactivate the module
+#: admin-notices.php:67
+msgid "The SQLite Integration plugin is active, but the %1$s file is missing. Please <a href=\"%2$s\">deactivate the plugin</a> and re-activate it to try again."
+msgstr "[SQLite 整合] 外掛已啟用，但是找不到 %1$s 檔案。請<a href=\"%2$s\">停用這個外掛</a>並嘗試再次啟用。"
+
+#: admin-notices.php:58
+msgid "The SQLite Integration plugin is active, but the wp-content/db.php file is missing and the wp-content directory is not writable. Please ensure the wp-content folder is writable, then deactivate the plugin and try again."
+msgstr "[SQLite 整合] 外掛已啟用，但是找不到 wp-content/db.php 檔案且 wp-content 目錄無法寫入。請確認 wp-content 資料夾可寫入，然後停用這個外掛並再試一次。"
+
+#. translators: 1: SQLITE_DB_DROPIN_VERSION constant, 2: db.php drop-in path
+#: admin-notices.php:42
+msgid "The SQLite Integration module is active, but the %1$s constant is missing. It appears you already have another %2$s file present on your site. "
+msgstr "[SQLite 整合] 外掛已啟用，但是找不到 %1$s 常數。這個網站似乎已有另一個 %2$s 檔案。"
+
+#: admin-notices.php:26
+msgid "The SQLite Integration plugin is active, but the PDO SQLite extension is missing from your server. Please make sure that PDO SQLite is enabled in your PHP installation."
+msgstr "[SQLite 整合] 外掛已啟用，但是在網站伺服器上找不到 PDO SQLite 擴充功能。請確認已在 PHP 執行環境中啟用 PDO SQLite。"
+
+#. Author of the plugin
+#: load.php
+msgid "The WordPress Team"
+msgstr "WordPress 團隊"
+
+#. Description of the plugin
+#: load.php
+msgid "SQLite database driver drop-in."
+msgstr "SQLite 資料庫驅動程式強化外掛。"
+
+#. Plugin Name of the plugin
+#: load.php
+msgid "SQLite Database Integration"
+msgstr "SQLite Database Integration"

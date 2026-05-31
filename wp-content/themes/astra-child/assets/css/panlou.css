@@ -1,0 +1,47 @@
+/* 解除 Astra 容器寬度限制 */
+body.page-template-page-panlou .ast-container,
+body.page-template-page-panlou #primary,
+body.page-template-page-panlou .site-content,
+body.page-template-page-panlou .entry-content,
+body.page-template-page-panlou .ast-article-single{max-width:none !important;padding-left:0 !important;padding-right:0 !important;width:100% !important}
+
+.panlou-wrap{font-family:'PingFang TC',system-ui,sans-serif;background:#000000;color:#1a1a3a}
+.panlou-wrap .panlou-header{text-align:center;padding:20px;border-bottom:2px solid #b0b0d8}
+.panlou-wrap h1{font-size:1.6rem;color:#2020a0;letter-spacing:.12em;margin:0;font-weight:700}
+.panlou-wrap .subtitle{font-size:.85rem;color:#5050a0;margin-top:4px}
+.layout{display:flex;flex-direction:row;gap:20px;padding:20px;width:100%;align-items:flex-start;box-sizing:border-box}
+.panel{background:#ffffff;border:1.5px solid #b0b0d0;border-radius:8px;padding:18px;box-shadow:0 2px 8px rgba(0,0,60,.08)}
+.form-panel{flex:0 0 262px}
+.chart-panel{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.table-panel{flex:0 0 280px}
+.panlou-wrap h2{font-size:.95rem;color:#2020a0;margin-bottom:14px;letter-spacing:.05em;font-weight:700}
+.fg{margin-bottom:12px}
+.panlou-wrap label{display:block;font-size:.82rem;color:#3838a0;margin-bottom:3px;font-weight:600}
+.panlou-wrap input,.panlou-wrap select{width:100%;padding:7px 9px;background:#fafafa;border:1.5px solid #9090c0;border-radius:4px;color:#1a1a3a;font-size:.9rem;box-sizing:border-box}
+.panlou-wrap input:focus,.panlou-wrap select:focus{outline:none;border-color:#3030c0;box-shadow:0 0 0 2px rgba(40,40,200,.1)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cities{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px}
+.city{padding:4px 8px;background:#eaeaff;border:1px solid #9898c8;border-radius:3px;font-size:.75rem;cursor:pointer;color:#2828a0;font-weight:500}
+.city:hover{background:#d0d0ff;border-color:#4040c0;color:#1010a0}
+.btn{width:100%;padding:11px;background:#2828b0;border:none;border-radius:6px;color:#ffffff;font-size:.95rem;cursor:pointer;margin-top:12px;letter-spacing:.05em;font-weight:700}
+.btn:hover{background:#1818a0}
+#chart-svg{width:100%;max-width:900px;height:auto;display:block}
+.chart-info{font-size:.8rem;color:#5050a0;text-align:center}
+.panlou-wrap table{width:100%;border-collapse:collapse;font-size:1.05rem}
+.panlou-wrap th{color:#000000;font-weight:700;padding:6px 8px;border-bottom:3px solid #3030a0;text-align:left;font-size:.95rem;background:#ddddf0}
+.panlou-wrap td{padding:5px 8px;border-bottom:1px solid #c8c8e8;color:#000000;font-size:1.05rem;font-weight:bold;white-space:nowrap;background:#ffffff}
+tr:nth-child(even) .panlou-wrap td{background:#f5f5f5}
+.empty{color:#555580;text-align:center;padding:20px;font-size:1rem;font-weight:600}
+.retro{color:#cc0000;font-size:1rem;margin-left:3px;font-weight:700}
+.house-info{margin-top:8px;font-size:.92rem;color:#000000;line-height:2;font-weight:600}
+.house-info span{color:#000066;margin-right:4px;font-weight:700}
+.sep-row td{border-top:2.5px solid #7070b0;background:#ddddf0!important;padding:6px 8px;color:#000000;font-size:.95rem;font-weight:700;letter-spacing:.12em;text-align:center}
+/* 八字四柱面板 */
+.bazi-panel{flex:0 0 200px}
+.bazi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:10px}
+.bazi-col{display:flex;flex-direction:column;align-items:center;gap:3px}
+.bazi-col-label{font-size:.7rem;color:#5050a0;font-weight:700;letter-spacing:.08em}
+.bazi-char-gan{font-size:1.35rem;font-weight:800;color:#000066;line-height:1.2}
+.bazi-divider{width:2px;height:16px;background:#c0c0e0}
+.bazi-char-zhi{font-size:1.35rem;font-weight:800;color:#3a0060;line-height:1.2}
+.bazi-tst{font-size:.75rem;color:#5050a0;margin-top:8px;text-align:center;font-weight:600}

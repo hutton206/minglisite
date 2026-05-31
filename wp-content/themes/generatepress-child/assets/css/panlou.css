@@ -1,0 +1,46 @@
+/* 解除 GeneratePress 所有容器的寬度限制 */
+body.page-template-page-panlou .container,
+body.page-template-page-panlou .grid-container,
+body.page-template-page-panlou .site-content,
+body.page-template-page-panlou #primary,
+body.page-template-page-panlou .entry-content,
+body.page-template-page-panlou .inside-article,
+body.page-template-page-panlou article{
+  max-width:none !important;
+  width:100% !important;
+  padding-left:0 !important;
+  padding-right:0 !important;
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+.panlou-wrap{font-family:'PingFang TC',system-ui,sans-serif;background:#080814;color:#d0d0e8}
+.panlou-wrap .panlou-header{text-align:center;padding:20px;border-bottom:1px solid #1e1e40}
+.panlou-wrap h1{font-size:1.5rem;color:#b090d0;letter-spacing:.12em;margin:0}
+.panlou-wrap .subtitle{font-size:.8rem;color:#505080;margin-top:4px}
+.layout{display:flex;flex-direction:row;gap:20px;padding:20px;align-items:flex-start;width:100%}
+.panel{background:#0d0d20;border:1px solid #1e1e40;border-radius:8px;padding:18px}
+.form-panel{flex:0 0 262px}
+.chart-panel{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:10px}
+.table-panel{flex:0 0 280px}
+.panlou-wrap h2{font-size:.9rem;color:#9070c0;margin-bottom:14px;letter-spacing:.05em}
+.fg{margin-bottom:11px}
+.panlou-wrap label{display:block;font-size:.73rem;color:#6060a0;margin-bottom:3px}
+.panlou-wrap input,.panlou-wrap select{width:100%;padding:6px 9px;background:#060612;border:1px solid #2a2a55;border-radius:4px;color:#d0d0e8;font-size:.83rem;box-sizing:border-box}
+.panlou-wrap input:focus,.panlou-wrap select:focus{outline:none;border-color:#5050a0}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cities{display:flex;flex-wrap:wrap;gap:4px;margin-top:3px}
+.city{padding:3px 7px;background:#0a0a1c;border:1px solid #2a2a50;border-radius:3px;font-size:.7rem;cursor:pointer;color:#9090b8}
+.city:hover{background:#151530;border-color:#4848a0;color:#c0c0e0}
+.btn{width:100%;padding:10px;background:#383898;border:none;border-radius:6px;color:#e0e0ff;font-size:.92rem;cursor:pointer;margin-top:12px;letter-spacing:.05em}
+.btn:hover{background:#4848b8}
+#chart-svg{width:100%;max-width:none;height:auto;display:block}
+.chart-info{font-size:.75rem;color:#404068;text-align:center}
+.panlou-wrap table{width:100%;border-collapse:collapse;font-size:.8rem}
+.panlou-wrap th{color:#404068;font-weight:400;padding:4px 6px;border-bottom:1px solid #181832;text-align:left}
+.panlou-wrap td{padding:4px 6px;border-bottom:1px solid #0f0f22}
+.empty{color:#303055;text-align:center;padding:30px;font-size:.85rem}
+.retro{color:#d07070;font-size:.7rem;margin-left:2px}
+.house-info{margin-top:10px;font-size:.72rem;color:#404068;line-height:1.8}
+.house-info span{color:#6060a0;margin-right:4px}
+.sep-row td{border-top:1px solid #252545;padding-top:6px;color:#404068;font-size:.7rem}
