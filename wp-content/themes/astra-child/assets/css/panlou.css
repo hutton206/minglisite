@@ -45,3 +45,13 @@ tr:nth-child(even) .panlou-wrap td{background:#f5f5f5}
 .bazi-divider{width:2px;height:16px;background:#c0c0e0}
 .bazi-char-zhi{font-size:1.35rem;font-weight:800;color:#3a0060;line-height:1.2}
 .bazi-tst{font-size:.75rem;color:#5050a0;margin-top:8px;text-align:center;font-weight:600}
+
+/* ── RWD：手機版 ─────────────────────────────────────── */
+@media (max-width:768px){
+  .layout{flex-direction:column;padding:12px;gap:12px}
+  .form-panel{flex:none;width:100%}
+  .chart-panel{flex:none;width:100%}
+  .table-panel{flex:none;width:100%}
+  .bazi-panel{flex:none;width:100%}
+  #chart-svg{max-width:100%;width:100%}
+}
