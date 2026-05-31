@@ -134,38 +134,40 @@ function getMingGong(sunLon, h) {
   };
 }
 
-// 二十八宿原始資料（傳統度數，總和 365.25）
-// 順序：虛女牛斗箕尾心房氐亢角軫翼張星柳鬼井參觜畢昴胃婁奎壁室危
-// 宿主星（木金土日月火水，從角宿起循環）
+// 二十八宿實際黃道起始位置（lon0 = 各宿0度對應的黃道經度）
+// 宮位換算：戌=0-30, 酉=30-60, 申=60-90, 未=90-120, 午=120-150
+//           巳=150-180, 辰=180-210, 卯=210-240, 寅=240-270
+//           丑=270-300, 子=300-330, 亥=330-360
+// 宿主星順序：從角宿起，木金土日月火水循環
 const MANSION_RAW = [
-  {name:'虛',trad:10,   ruler:'Sun'},
-  {name:'女',trad:12,   ruler:'Saturn'},
-  {name:'牛',trad:8,    ruler:'Venus'},
-  {name:'斗',trad:26.25,ruler:'Jupiter'},
-  {name:'箕',trad:11,   ruler:'Mercury'},
-  {name:'尾',trad:18,   ruler:'Mars'},
-  {name:'心',trad:5,    ruler:'Moon'},
-  {name:'房',trad:5,    ruler:'Sun'},
-  {name:'氐',trad:15,   ruler:'Saturn'},
-  {name:'亢',trad:9,    ruler:'Venus'},
-  {name:'角',trad:12,   ruler:'Jupiter'},
-  {name:'軫',trad:17,   ruler:'Mercury'},
-  {name:'翼',trad:18,   ruler:'Mars'},
-  {name:'張',trad:18,   ruler:'Moon'},
-  {name:'星',trad:7,    ruler:'Sun'},
-  {name:'柳',trad:15,   ruler:'Saturn'},
-  {name:'鬼',trad:4,    ruler:'Venus'},
-  {name:'井',trad:33,   ruler:'Jupiter'},
-  {name:'參',trad:9,    ruler:'Mercury'},
-  {name:'觜',trad:2,    ruler:'Mars'},
-  {name:'畢',trad:16,   ruler:'Moon'},
-  {name:'昴',trad:11,   ruler:'Sun'},
-  {name:'胃',trad:14,   ruler:'Saturn'},
-  {name:'婁',trad:12,   ruler:'Venus'},
-  {name:'奎',trad:16,   ruler:'Jupiter'},
-  {name:'壁',trad:9,    ruler:'Mercury'},
-  {name:'室',trad:16,   ruler:'Mars'},
-  {name:'危',trad:17,   ruler:'Moon'},
+  {name:'虛', lon0:323.43, ruler:'Sun'},
+  {name:'女', lon0:311.76, ruler:'Saturn'},
+  {name:'牛', lon0:304.09, ruler:'Venus'},
+  {name:'斗', lon0:280.19, ruler:'Jupiter'},
+  {name:'箕', lon0:271.24, ruler:'Mercury'},
+  {name:'尾', lon0:256.04, ruler:'Mars'},
+  {name:'心', lon0:247.79, ruler:'Moon'},
+  {name:'房', lon0:242.93, ruler:'Sun'},
+  {name:'氐', lon0:225.08, ruler:'Saturn'},
+  {name:'亢', lon0:214.50, ruler:'Venus'},
+  {name:'角', lon0:203.50, ruler:'Jupiter'},
+  {name:'軫', lon0:190.70, ruler:'Mercury'},
+  {name:'翼', lon0:173.76, ruler:'Mars'},
+  {name:'張', lon0:154.68, ruler:'Moon'},
+  {name:'星', lon0:146.69, ruler:'Sun'},
+  {name:'柳', lon0:130.70, ruler:'Saturn'},
+  {name:'鬼', lon0:125.72, ruler:'Venus'},
+  {name:'井', lon0: 95.27, ruler:'Jupiter'},
+  {name:'參', lon0: 84.66, ruler:'Mercury'},
+  {name:'觜', lon0: 83.66, ruler:'Mars'},
+  {name:'畢', lon0: 68.46, ruler:'Moon'},
+  {name:'昴', lon0: 59.39, ruler:'Sun'},
+  {name:'胃', lon0: 46.92, ruler:'Saturn'},
+  {name:'婁', lon0: 33.95, ruler:'Venus'},
+  {name:'奎', lon0: 22.43, ruler:'Jupiter'},
+  {name:'壁', lon0: 10.21, ruler:'Mercury'},
+  {name:'室', lon0:353.46, ruler:'Mars'},
+  {name:'危', lon0:333.40, ruler:'Moon'},
 ];
 
 // 星體顯示標籤（漢字簡稱）
@@ -192,28 +194,19 @@ const r2d = r => r * 180 / π;
 const d2r = d => d * π / 180;
 const n360 = a => ((a % 360) + 360) % 360;
 
-// ─── 二十八宿初始化 ──────────────────────────────────────
-// 基準：角宿0度=辰宮23.5°、虛宿0度=子宮23.43°，兩者反推平均值
-// 角宿反推：332.8635°，虛宿反推：333.2863°，平均 = 333.0749°
-const MANSION_START = 333.0749; // 亥宮3°04'
-// 1 傳統度 = 360/365.25 現代度
-const MANSION_SCALE = 360 / 365.25;
-
-let _mCum = 0;
-const MANSIONS = MANSION_RAW.map(m => {
-  const width = m.trad * MANSION_SCALE;
-  const lon0  = n360(MANSION_START - _mCum);
-  const lonM  = n360(MANSION_START - _mCum - width / 2);
-  _mCum += width;
-  return { name: m.name, trad: m.trad, width, lon0, lonM, ruler: m.ruler };
+// ─── 二十八宿初始化（依硬編碼實際位置計算寬度與中點）───────────
+// 按 lon0 由大到小排列（東→西），計算每宿寬度 = 下一宿起點 - 本宿起點（向東）
+const MANSIONS = MANSION_RAW.map((m, i) => {
+  const next = MANSION_RAW[(i - 1 + MANSION_RAW.length) % MANSION_RAW.length];
+  const width = n360(next.lon0 - m.lon0); // 向東方向的寬度
+  const lonM  = n360(m.lon0 + width / 2);
+  return { name: m.name, lon0: m.lon0, width, lonM, ruler: m.ruler };
 });
 
 function getMansion(lon) {
-  const rel = n360(MANSION_START - n360(lon));
-  let cum = 0;
+  const l = n360(lon);
   for (const m of MANSIONS) {
-    if (rel >= cum && rel < cum + m.width) return m;
-    cum += m.width;
+    if (n360(l - m.lon0) < m.width) return m;
   }
   return MANSIONS[0];
 }
