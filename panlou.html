@@ -519,7 +519,14 @@ function calcBazi(y, mo, d, tst_h) {
   const year  = calcYearGanzhi(y, mo, d);
   const month = calcMonthGanzhi(y, mo, d, year.ganIdx);
   const day   = calcDayGanzhi(y, mo, d);
-  const hour  = calcHourGanzhi(tst_h, day.ganIdx);
+  // 夜子時（23:00～24:00）：時干用隔天日干推算，日柱仍顯示當天
+  let hourDayGanIdx = day.ganIdx;
+  if (tst_h >= 23) {
+    const tomorrow = new Date(Date.UTC(y, mo - 1, d + 1));
+    const nextDay = calcDayGanzhi(tomorrow.getUTCFullYear(), tomorrow.getUTCMonth() + 1, tomorrow.getUTCDate());
+    hourDayGanIdx = nextDay.ganIdx;
+  }
+  const hour = calcHourGanzhi(tst_h, hourDayGanIdx);
   return { year, month, day, hour };
 }
 
