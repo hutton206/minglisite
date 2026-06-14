@@ -5,8 +5,8 @@ wp-config.php
 /wp-admin/
 /wp-includes/
 
-# 上傳的媒體檔案
-/wp-content/uploads/
+# 上傳的媒體檔案（已納入版控，方便跨裝置同步品牌素材）
+# /wp-content/uploads/
 
 # 快取與暫存
 /wp-content/cache/
